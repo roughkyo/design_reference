@@ -19,34 +19,48 @@
 html,body{margin:0;background:var(--ink);color:var(--ink)}
 body{font-family:"Pretendard Variable",Pretendard,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.wrap{max-width:1360px;margin:0 auto;padding:var(--gap)}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(230px,auto);grid-auto-flow:dense;gap:var(--gap)}
+.wrap{max-width:1880px;margin:0 auto;padding:var(--gap)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(210px,auto);grid-auto-flow:dense;gap:var(--gap)}
 .tile{position:relative;min-width:0;border-radius:var(--r);padding:26px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,opacity .25s ease}
 .w2{grid-column:span 2}.h2{grid-row:span 2}.w4{grid-column:span 4}
 .orange{background:var(--orange);color:var(--white)}
 .sky{background:var(--sky);color:var(--ink)}
 .peach{background:var(--peach);color:var(--ink)}
 .white{background:var(--white);color:var(--ink)}
+.site{background:var(--bg);color:var(--fg)}
+.site .arrow{background:var(--ac);color:var(--ac-fg,#fff)}
+.site .badge{background:var(--chip,rgba(255,255,255,.9));color:var(--chip-fg,var(--ink))}
+.site .badge.login{background:var(--fg);color:var(--bg)}
+.site .badge.ghost{background:transparent;color:inherit}
+.site .mini .dot{background:var(--ac)}
+.shot{margin:14px 0 0;border-radius:16px;overflow:hidden;height:150px;background:rgba(0,0,0,.08);box-shadow:0 10px 26px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.08)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.site:hover .shot img{transform:scale(1.04)}
+.shot.none{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center;padding:14px;box-shadow:none;border:2px dashed currentColor;opacity:.75;background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(127,127,127,.08) 10px 20px)}
+.shot.none span{font-weight:800;font-size:15px}.shot.none small{font-size:12px;word-break:keep-all}
 .display{font-family:Unbounded,"Pretendard Variable",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02}
 
 /* ---------- 히어로 ---------- */
-.hero{min-height:480px;justify-content:space-between}
+.hero{min-height:300px;justify-content:space-between}
+.neu{background:var(--ink);color:#fff;box-shadow:9px 9px 22px #050505,-9px -9px 22px #222;border:1px solid rgba(255,255,255,.03)}
+.neu .eyebrow{color:#FF8A4C}
 .hero > div:first-child{position:relative;z-index:1;max-width:58%}
 .hero .eyebrow{font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
-.hero h1{font-size:clamp(40px,5.4vw,76px);margin:10px 0 0;color:var(--white)}
-.hero p{max-width:330px;font-size:17px;margin:14px 0 0;opacity:.95;word-break:keep-all}
-.hero .cta{display:inline-flex;gap:10px;align-items:center;margin-top:20px;background:var(--white);color:var(--orange);font-weight:800;border-radius:999px;padding:12px 18px;text-decoration:none;width:max-content;box-shadow:0 10px 30px rgba(0,0,0,.18);position:relative;z-index:1}
+.hero h1{font-size:clamp(30px,3.5vw,50px);margin:8px 0 0;color:var(--white)}
+.hero p{max-width:330px;font-size:15px;margin:12px 0 0;opacity:.8;word-break:keep-all}
+.hero .cta{display:inline-flex;gap:10px;align-items:center;margin-top:16px;background:var(--ink);color:#FF8A4C;font-weight:800;border-radius:999px;padding:11px 18px;text-decoration:none;width:max-content;box-shadow:5px 5px 12px #050505,-5px -5px 12px #242424;position:relative;z-index:1}
+.hero .cta:active{box-shadow:inset 4px 4px 10px #050505,inset -4px -4px 10px #242424}
 
 /* 3D 벤토 큐브 (Spline 'Bento 3D'를 참고한 CSS 입체) */
-.scene{position:absolute;right:-50px;bottom:-70px;width:430px;height:430px;pointer-events:none}
-.glow{position:absolute;inset:10% 0 0 10%;background:radial-gradient(closest-side,rgba(255,255,255,.55),rgba(255,255,255,0));filter:blur(10px)}
-.iso{position:absolute;left:50%;top:52%;width:270px;height:270px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:12px;
+.scene{position:absolute;right:-40px;bottom:-60px;width:330px;height:330px;pointer-events:none}
+.glow{position:absolute;inset:10% 0 0 10%;background:radial-gradient(closest-side,rgba(255,138,76,.35),rgba(255,138,76,0));filter:blur(14px)}
+.iso{position:absolute;left:50%;top:52%;width:200px;height:200px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:12px;
   transform:translate(-50%,-50%) rotateX(56deg) rotateZ(-45deg);transform-style:preserve-3d}
 .plate{border-radius:18px;background:linear-gradient(135deg,#fff 0%,#FFE9DC 60%,#FFD2B6 100%);animation:float 6s ease-in-out infinite;
   box-shadow:1px 1px 0 #f3b48d,2px 2px 0 #eea67b,3px 3px 0 #e99a6c,4px 4px 0 #e48e5f,5px 5px 0 #df8253,6px 6px 0 #da7748,7px 7px 0 #d46c3e,8px 8px 0 #cf6235,9px 9px 0 #c9592d,10px 10px 0 #c35026,22px 26px 30px rgba(80,20,0,.35)}
 .plate.s{background:linear-gradient(135deg,#fff 0%,#DCE8FF 55%,#9EC0FA 100%);
   box-shadow:1px 1px 0 #9ebdf3,2px 2px 0 #92b3ee,3px 3px 0 #86a9e8,4px 4px 0 #7b9fe2,5px 5px 0 #7095db,6px 6px 0 #668bd4,7px 7px 0 #5c82cc,8px 8px 0 #5379c4,9px 9px 0 #4b70bb,10px 10px 0 #4368b2,22px 26px 30px rgba(10,30,80,.35)}
-.plate.k{background:linear-gradient(135deg,#3a3a3a,#111);box-shadow:1px 1px 0 #0d0d0d,2px 2px 0 #0b0b0b,3px 3px 0 #090909,4px 4px 0 #080808,5px 5px 0 #070707,6px 6px 0 #060606,7px 7px 0 #050505,8px 8px 0 #040404,22px 26px 30px rgba(0,0,0,.45)}
+.plate.k{background:linear-gradient(135deg,#FF8A4C,#FF6A1A);box-shadow:1px 1px 0 #0d0d0d,2px 2px 0 #0b0b0b,3px 3px 0 #090909,4px 4px 0 #080808,5px 5px 0 #070707,6px 6px 0 #060606,7px 7px 0 #050505,8px 8px 0 #040404,22px 26px 30px rgba(0,0,0,.45)}
 .p1{grid-column:1/3;grid-row:1/2;animation-delay:-1s}.p2{grid-column:3/4;grid-row:1/3;animation-delay:-2.2s}
 .p3{grid-column:1/2;grid-row:2/4;animation-delay:-3.1s}.p4{grid-column:2/3;grid-row:2/3;animation-delay:-4s}.p5{grid-column:2/4;grid-row:3/4;animation-delay:-5s}
 @keyframes float{0%,100%{transform:translateZ(0)}50%{transform:translateZ(18px)}}
@@ -89,7 +103,15 @@ a{color:inherit}
 .mini .dot{width:10px;height:10px;border-radius:50%;background:var(--orange);flex:none}
 .mini code{font-family:ui-monospace,Consolas,monospace;font-size:12px;overflow-wrap:anywhere}
 .mini{min-width:0}
-.dim{opacity:.25;transform:none!important}
+@media (min-width:1440px){.grid{grid-template-columns:repeat(6,minmax(0,1fr))}.w4{grid-column:span 4}.site:not(.w2) h3{font-size:clamp(17px,1.12vw,22px)}.w2 .shot{height:170px}}
+/* 필터: 맞는 사이트는 또렷 + 바깥 테두리가 은은하게 숨쉬듯, 나머지는 흐리게 */
+.tile{transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s ease,filter .35s ease,box-shadow .35s ease}
+.dim{opacity:.22;filter:saturate(.3);transform:scale(.97)!important}
+.lit{animation:edge 2.6s ease-in-out infinite;z-index:1}
+@keyframes edge{
+  0%,100%{box-shadow:0 0 0 2px rgba(255,255,255,.35),0 0 18px 2px rgba(255,255,255,.10)}
+  50%{box-shadow:0 0 0 3px rgba(255,255,255,.65),0 0 34px 6px rgba(255,255,255,.22)}
+}
 
 /* ---------- 사용법·푸터 ---------- */
 .how h2{font-size:24px;margin:0 0 14px}
@@ -101,25 +123,25 @@ a{color:inherit}
 .foot a{color:var(--white);font-weight:700}
 
 /* ---------- 반응형 ---------- */
-@media (max-width:1060px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.w4{grid-column:span 2}.scene{width:340px;height:340px}}
+@media (max-width:1060px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.w4{grid-column:span 2}.scene{width:300px;height:300px}}
 @media (max-width:640px){
   :root{--r:22px;--gap:10px}
   .grid{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto}
   .hero > div:first-child{max-width:100%}
   .hero h1{font-size:clamp(34px,11vw,48px)}
   .w2,.w4{grid-column:span 1}.h2{grid-row:span 1}
-  .tile{padding:22px;min-height:210px}.hero{min-height:540px}
-  .scene{width:300px;height:300px;right:-40px;bottom:-50px}
+  .tile{padding:22px;min-height:210px}.hero{min-height:360px}
+  .scene{width:240px;height:240px;right:-40px;bottom:-50px}
   .steps{grid-template-columns:1fr}
 }
-@media (prefers-reduced-motion:reduce){.plate,.spark{animation:none}.tile,.arrow{transition:none}}
+@media (prefers-reduced-motion:reduce){.plate,.spark{animation:none}.tile,.arrow{transition:none}.lit{animation:none;box-shadow:0 0 0 3px rgba(255,255,255,.6)}}
 </style>
 </head>
 <body>
 <main class="wrap">
   <div class="grid" id="grid">
 
-    <section class="tile orange w2 h2 hero" aria-labelledby="t-hero">
+    <section class="tile w2 hero neu" aria-labelledby="t-hero">
       <div>
         <div class="eyebrow">design-ref-finder · 10 sites</div>
         <h1 id="t-hero" class="display">DESIGN<br>REFERENCE<br>HUB</h1>
@@ -154,86 +176,96 @@ a{color:inherit}
       </div>
     </section>
 
-    <a id="sites" class="tile sky w2 site" data-tags="web login" href="https://app.spline.design/community/collection/brand-marketing" target="_blank" rel="noopener">
+    <a id="sites" class="tile site w2" style="--bg:#8EB4F6;--fg:#111;--ac:#111;--chip:#fff" data-tags="web login" href="https://app.spline.design/community/collection/brand-marketing" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">웹페이지 디자인 · 3D</span>
       <h3 class="display">Spline Community</h3>
       <p class="desc">첫 화면에 넣을 3D·인터랙티브 장면을 찾는 곳. 마음에 들면 Remix로 내 작업 공간에 복사해 고칠 수 있어요.</p>
       <div class="mini"><span class="dot"></span><span>이 페이지의 기준 레퍼런스: <b>Bento 3D</b> (krisxsee)</span></div>
+      <figure class="shot none"><span>↗ 눌러서 직접 보기</span><small>로그인해야 볼 수 있어 미리보기를 싣지 않았어요</small></figure>
       <div class="meta"><span class="badge login">로그인 필요</span><span class="badge ghost">웹 ◎</span></div>
     </a>
 
-    <a class="tile white site" data-tags="web app login" href="https://mobbin.com/discover/sites/popular" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#F4D6EE;--fg:#2A1030;--ac:#C2368F;--chip:#fff" data-tags="web app login" href="https://mobbin.com/discover/sites/popular" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">프레임 · 화면 구성</span>
       <h3 class="display">Mobbin</h3>
       <p class="desc">실제 서비스의 화면과 가입·결제 흐름을 그대로 볼 수 있는 화면 모음.</p>
+      <figure class="shot none"><span>↗ 눌러서 직접 보기</span><small>사이트가 자동 수집을 막아 미리보기를 싣지 않았어요</small></figure>
       <div class="meta"><span class="badge login">로그인 필요</span><span class="badge ghost">웹 ◎</span><span class="badge ghost">프로그램 ◎</span></div>
     </a>
 
-    <a class="tile orange site" data-tags="web app free" href="https://dribbble.com/shots/popular/animation" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#FF6A1A;--fg:#fff;--ac:#fff;--ac-fg:#FF6A1A;--chip:#fff" data-tags="web app free" href="https://dribbble.com/shots/popular/animation" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">움직임 · 애니메이션</span>
       <h3 class="display">Dribbble</h3>
       <p class="desc">버튼·카드·화면 전환 같은 움직임 아이디어를 빠르게 훑어보기.</p>
+      <figure class="shot none"><span>↗ 눌러서 직접 보기</span><small>이용약관상 화면 수집이 금지돼 미리보기를 싣지 않았어요</small></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span><span class="badge ghost">프로그램 ○</span></div>
     </a>
 
-    <a class="tile peach site" data-tags="web free" href="https://www.siteinspire.com/" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#F3F7A3;--fg:#1D2B12;--ac:#1D2B12;--chip:#fff" data-tags="web free" href="https://www.siteinspire.com/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">특별한 디자인</span>
       <h3 class="display">SiteInspire</h3>
       <p class="desc">개성 있는 실제 웹사이트를 스타일·분야별로 고르기.</p>
+      <figure class="shot"><img src="img/siteinspire.jpg" alt="SiteInspire 첫 화면 미리보기" loading="lazy" width="720" height="450"></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span></div>
     </a>
 
-    <a class="tile orange w2 site" data-tags="web app free" href="https://21st.dev/" target="_blank" rel="noopener">
+    <a class="tile site w2" style="--bg:#4E8F6C;--fg:#F3F7A3;--ac:#F3F7A3;--ac-fg:#1D3A2A;--chip:#F3F7A3;--chip-fg:#1D3A2A" data-tags="web app free" href="https://21st.dev/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">UI 컴포넌트 · 템플릿</span>
       <h3 class="display">21st.dev</h3>
       <p class="desc">히어로·벤토·가격표·대시보드처럼 바이브코딩에 바로 붙여 쓰는 React 부품 1만 2천여 개.</p>
       <div class="mini"><span class="dot"></span><span>예: <code>/community/components/s/bento</code> 벤토 컴포넌트 86개</span></div>
+      <figure class="shot"><img src="img/21st.jpg" alt="21st.dev 첫 화면 미리보기" loading="lazy" width="720" height="450"></figure>
       <div class="meta"><span class="badge">무료 (코드 복사 하루 제한)</span><span class="badge ghost">웹 ◎</span><span class="badge ghost">프로그램 ◎</span></div>
     </a>
 
-    <a class="tile sky site" data-tags="web app free" href="https://getdesign.md/" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#B7A6F7;--fg:#1B1340;--ac:#1B1340;--chip:#fff" data-tags="web app free" href="https://getdesign.md/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">디자인 시스템 문서</span>
       <h3 class="display">getdesign.md</h3>
       <p class="desc">실제 브랜드의 색·서체·간격을 정리한 DESIGN.md를 AI에게 그대로 넘기기.</p>
       <div class="mini"><span class="dot"></span><code>npx getdesign@latest add linear.app</code></div>
+      <figure class="shot"><img src="img/getdesign.jpg" alt="getdesign.md 첫 화면 미리보기" loading="lazy" width="720" height="450"></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span><span class="badge ghost">프로그램 ◎</span></div>
     </a>
 
-    <a class="tile white site" data-tags="web free" href="https://www.awwwards.com/websites/sites_of_the_year/" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#FFFFFF;--fg:#111;--ac:#FF3D2E;--chip:#FFE3D1" data-tags="web free" href="https://www.awwwards.com/websites/sites_of_the_year/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">최고 수준 수상작</span>
       <h3 class="display">Awwwards</h3>
       <p class="desc">올해의 사이트(SOTY) 수상작으로 완성도의 기준 잡기.</p>
+      <figure class="shot"><img src="img/awwwards.jpg" alt="Awwwards 올해의 사이트 목록 미리보기" loading="lazy" width="720" height="450"></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span></div>
     </a>
 
-    <a class="tile orange site" data-tags="web free" href="https://www.footer.design/" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#FFD23F;--fg:#1E1A05;--ac:#1E1A05;--chip:#fff" data-tags="web free" href="https://www.footer.design/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">푸터</span>
       <h3 class="display">footer.design</h3>
       <p class="desc">잘 만든 푸터 776개를 스타일·업종별로.</p>
+      <figure class="shot"><img src="img/footer.jpg" alt="footer.design 첫 화면 미리보기" loading="lazy" width="720" height="450"></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span></div>
     </a>
 
-    <a class="tile sky site" data-tags="web free" href="https://www.cta.gallery/" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#2B59C3;--fg:#fff;--ac:#FFD23F;--ac-fg:#1E1A05;--chip:#fff" data-tags="web free" href="https://www.cta.gallery/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">CTA · 버튼 · 폼</span>
       <h3 class="display">cta.gallery</h3>
       <p class="desc">신청 폼·뉴스레터·버튼 같은 행동 유도 디자인 523개.</p>
+      <figure class="shot"><img src="img/cta.jpg" alt="cta.gallery 첫 화면 미리보기" loading="lazy" width="720" height="450"></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span></div>
     </a>
 
-    <a class="tile peach site" data-tags="web app free" href="https://styles.refero.design/" target="_blank" rel="noopener">
+    <a class="tile site" style="--bg:#FFE3D1;--fg:#3A1A0A;--ac:#E8590C;--chip:#fff" data-tags="web app free" href="https://styles.refero.design/" target="_blank" rel="noopener">
       <span class="arrow" aria-hidden="true">↗</span>
       <span class="role">색 · 서체 · 브랜드 느낌</span>
       <h3 class="display">Refero Styles</h3>
       <p class="desc">실제 제품 사이트의 색표·서체·디자인 토큰을 브랜드 이름으로 찾기.</p>
+      <figure class="shot none"><span>↗ 눌러서 직접 보기</span><small>사이트가 자동 수집을 막아 미리보기를 싣지 않았어요</small></figure>
       <div class="meta"><span class="badge">무료</span><span class="badge ghost">웹 ◎</span><span class="badge ghost">프로그램 ○</span></div>
     </a>
 
@@ -264,6 +296,7 @@ a{color:inherit}
       sites.forEach(function(s){
         var on=f==='all'||(' '+s.dataset.tags+' ').indexOf(' '+f+' ')>-1;
         s.classList.toggle('dim',!on);
+        s.classList.toggle('lit',on&&f!=='all');
       });
     });
   });
