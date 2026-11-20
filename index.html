@@ -107,10 +107,11 @@ a{color:inherit}
 /* 필터: 맞는 사이트는 또렷 + 바깥 테두리가 은은하게 숨쉬듯, 나머지는 흐리게 */
 .tile{transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .35s ease,filter .35s ease,box-shadow .35s ease}
 .dim{opacity:.22;filter:saturate(.3);transform:scale(.97)!important}
-.lit{animation:edge 2.6s ease-in-out infinite;z-index:1}
+/* 엣지라이팅: 타일마다 형광 주황 또는 형광 퍼플(--glow)을 무작위로 */
+.lit{--glow:#FF6A00;animation:edge 2.2s ease-in-out infinite;z-index:1}
 @keyframes edge{
-  0%,100%{box-shadow:0 0 0 2px rgba(255,255,255,.35),0 0 18px 2px rgba(255,255,255,.10)}
-  50%{box-shadow:0 0 0 3px rgba(255,255,255,.65),0 0 34px 6px rgba(255,255,255,.22)}
+  0%,100%{box-shadow:0 0 0 3px var(--glow),0 0 22px 4px color-mix(in srgb,var(--glow) 70%,transparent),0 0 60px 10px color-mix(in srgb,var(--glow) 35%,transparent)}
+  50%{box-shadow:0 0 0 4px var(--glow),0 0 36px 10px color-mix(in srgb,var(--glow) 85%,transparent),0 0 90px 22px color-mix(in srgb,var(--glow) 50%,transparent)}
 }
 
 /* ---------- 사용법·푸터 ---------- */
@@ -134,7 +135,7 @@ a{color:inherit}
   .scene{width:240px;height:240px;right:-40px;bottom:-50px}
   .steps{grid-template-columns:1fr}
 }
-@media (prefers-reduced-motion:reduce){.plate,.spark{animation:none}.tile,.arrow{transition:none}.lit{animation:none;box-shadow:0 0 0 3px rgba(255,255,255,.6)}}
+@media (prefers-reduced-motion:reduce){.plate,.spark{animation:none}.tile,.arrow{transition:none}.lit{animation:none;box-shadow:0 0 0 4px var(--glow),0 0 30px 8px var(--glow)}}
 </style>
 </head>
 <body>
@@ -300,6 +301,7 @@ a{color:inherit}
         var on=f==='all'||(' '+s.dataset.tags+' ').indexOf(' '+f+' ')>-1;
         s.classList.toggle('dim',!on);
         s.classList.toggle('lit',on&&f!=='all');
+        if(on&&f!=='all'){s.style.setProperty('--glow',Math.random()<.5?'#FF5F00':'#BC13FE');s.style.animationDelay=(-Math.random()*2.2).toFixed(2)+'s'}
       });
     });
   });
