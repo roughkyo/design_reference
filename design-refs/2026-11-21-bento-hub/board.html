@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>디자인 추천 보드</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1f24;--sub:#5b606b;--line:#e3e1dc;--accent:#3b5bdb;--free:#2f9e44;--login:#e8590c}
+@media (prefers-color-scheme:dark){:root{--bg:#141518;--card:#1e2025;--ink:#eceef2;--sub:#a3a8b3;--line:#2e3138;--accent:#7c9cff;--free:#51cf66;--login:#ff922b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:28px 16px 140px}
+h1{font-size:26px;margin:0 0 6px}.situ{color:var(--sub);margin:0 0 4px}.date{color:var(--sub);font-size:13px}
+.guide{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:18px 0 26px;color:var(--sub)}
+.dir{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:22px}
+.dir.chosen{outline:3px solid var(--accent)}
+.dirpick{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:19px;font-weight:700}
+.dir-id{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-size:16px}
+.dir-sum{margin:8px 0 10px;color:var(--sub)}
+.meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.kw{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin:0 6px 6px 0;font-size:13px}
+.sw{display:inline-block;width:28px;height:28px;border-radius:8px;margin-left:6px;border:1px solid var(--line)}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+.ref{border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;background:var(--bg)}
+.thumb{display:block;aspect-ratio:16/10;background:var(--line);overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s}
+.thumb:hover img{transform:scale(1.03)}.thumb.noimg{display:grid;place-items:center;padding:16px;text-align:center;color:var(--sub);font-size:13px;text-decoration:none;background:repeating-linear-gradient(45deg,var(--line),var(--line) 10px,var(--bg) 10px,var(--bg) 20px)}
+.thumb.noimg span{background:var(--card);border-radius:8px;padding:8px 10px}
+.refs{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.ref-body{padding:12px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.ref-top{display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.site{font-weight:700;color:var(--accent)}.badge{border-radius:6px;padding:1px 7px;color:#fff}.badge.free{background:var(--free)}.badge.login{background:var(--login)}
+h4{margin:4px 0;font-size:16px}h4 a{color:var(--ink);text-decoration:none}h4 a:hover{text-decoration:underline}
+.ref p{margin:2px 0;font-size:14px;color:var(--sub)}.ref p b{color:var(--ink);margin-right:4px}
+.pick{margin-top:auto;padding-top:8px;font-size:14px;cursor:pointer}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:12px 16px}
+.bar .in{max-width:1280px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar textarea{flex:1;min-width:220px;height:44px;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--bg);color:var(--ink);font:inherit}
+.bar button{border:0;border-radius:10px;padding:12px 18px;background:var(--accent);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.status{font-size:13px;color:var(--sub);min-width:150px}
+pre#out{white-space:pre-wrap;background:var(--card);border:1px dashed var(--line);border-radius:10px;padding:12px;display:none}
+</style></head><body><div class="wrap">
+<h1>디자인 레퍼런스 허브 (벤토그리드)</h1><p class="situ">design-ref-finder가 안내하는 디자인 사이트 10곳을 한 페이지에 모아 보여 주는 웹페이지 · 벤토그리드 · GitHub + Vercel 배포 · 첨부 이미지 2장 참고</p><p class="date">design-ref-finder · 2026-11-21</p>
+<div class="guide">① 마음에 드는 <b>디자인 방식</b> 하나를 고르고 ② 참고할 <b>레퍼런스</b>에 체크한 뒤 ③ 아래 <b>선택 내용 복사</b>를 눌러 채팅창에 붙여 넣으세요. 카드 제목을 누르면 원래 사이트가 새 탭으로 열립니다.</div>
+
+  <section class="dir" id="dir-A">
+    <header class="dir-head">
+      <label class="dirpick"><input type="radio" name="direction" value="A"
+        data-label="A. 비비드 투톤 벤토">
+        <span class="dir-id">A</span><span class="dir-name">비비드 투톤 벤토</span></label>
+      <p class="dir-sum">첨부 1번처럼 주황·하늘색 두 색을 크게 번갈아 쓰고, 흰 카드와 굵은 글씨로 경쾌하게</p>
+      <div class="meta"><div class="kws"><span class='kw'>주황 + 하늘색</span><span class='kw'>큰 라운드(24~32px)</span><span class='kw'>굵은 산세리프</span><span class='kw'>흰 카드 속 미리보기</span><span class='kw'>밝고 친근</span></div><div class="sws"><span class="sw" style="background:#FF6A1A" title="#FF6A1A"></span><span class="sw" style="background:#8EB4F6" title="#8EB4F6"></span><span class="sw" style="background:#FFFFFF" title="#FFFFFF"></span><span class="sw" style="background:#111111" title="#111111"></span><span class="sw" style="background:#FFE3D1" title="#FFE3D1"></span></div></div>
+    </header>
+    <div class="refs">
+      <article class="ref">
+        <a class="thumb" href="https://21st.dev/@abushaidislam7/components/agency-bento-grid" target="_blank" rel="noopener"><img src="https://21st.dev/og/component/abushaidislam7/agency-bento-grid" alt="Agency Bento Grid 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">21st.dev</span>
+            <span class="badge free">무료(코드 복사 하루 제한)</span></div>
+          <h4><a href="https://21st.dev/@abushaidislam7/components/agency-bento-grid" target="_blank" rel="noopener">Agency Bento Grid ↗</a></h4>
+          <p><b>고른 이유</b> 큰 타일 하나와 작은 타일을 섞은 에이전시형 벤토</p>
+          <p><b>가져올 점</b> 대표 사이트 1곳을 큰 타일로 강조</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="21st.dev · Agency Bento Grid (https://21st.dev/@abushaidislam7/components/agency-bento-grid)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://21st.dev/@isaiahbjork/components/marketing-feature-bento" target="_blank" rel="noopener"><img src="https://21st.dev/og/component/isaiahbjork/marketing-feature-bento" alt="Marketing Feature Bento 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">21st.dev</span>
+            <span class="badge free">무료(코드 복사 하루 제한)</span></div>
+          <h4><a href="https://21st.dev/@isaiahbjork/components/marketing-feature-bento" target="_blank" rel="noopener">Marketing Feature Bento ↗</a></h4>
+          <p><b>고른 이유</b> 기능 소개용 벤토라 사이트 소개 타일에 바로 맞음</p>
+          <p><b>가져올 점</b> 타일마다 제목 + 한 줄 설명 + 그림</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="21st.dev · Marketing Feature Bento (https://21st.dev/@isaiahbjork/components/marketing-feature-bento)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://www.footer.design/sites/diego-liv-works" target="_blank" rel="noopener"><img src="https://cdn.prod.website-files.com/64fe1f9c06690a6cee3471ec/6743d64f0bb2b52f38ea7420_65366d962757ddf2d172018f_diegolivworks-desktop.avif" alt="Diego 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">footer.design</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://www.footer.design/sites/diego-liv-works" target="_blank" rel="noopener">Diego ↗</a></h4>
+          <p><b>고른 이유</b> Bento Box · Bold · Bright · Colorful 태그를 모두 가진 푸터</p>
+          <p><b>가져올 점</b> 원색 타일로 마무리하는 푸터</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="footer.design · Diego (https://www.footer.design/sites/diego-liv-works)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb noimg" href="https://app.spline.design/community/collection/brand-marketing" target="_blank" rel="noopener"><span>Spline 커뮤니티는 로그인해야 보여요. 로그인한 Chrome에서 직접 보세요.</span></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">Spline 커뮤니티</span>
+            <span class="badge login">로그인 필요</span></div>
+          <h4><a href="https://app.spline.design/community/collection/brand-marketing" target="_blank" rel="noopener">Brand and Marketing 컬렉션 ↗</a></h4>
+          <p><b>고른 이유</b> 타일 하나에 넣을 3D 오브젝트 후보</p>
+          <p><b>가져올 점</b> 대표 타일 1개만 3D로 포인트</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="Spline 커뮤니티 · Brand and Marketing 컬렉션 (https://app.spline.design/community/collection/brand-marketing)"> 이 레퍼런스 참고</label>
+        </div>
+      </article></div>
+  </section>
+  <section class="dir" id="dir-B">
+    <header class="dir-head">
+      <label class="dirpick"><input type="radio" name="direction" value="B"
+        data-label="B. 다크 파스텔 벤토">
+        <span class="dir-id">B</span><span class="dir-name">다크 파스텔 벤토</span></label>
+      <p class="dir-sum">첨부 2번처럼 검정 배경에 파스텔 타일, 큰 숫자와 형광 하이라이트로 세련되게</p>
+      <div class="meta"><div class="kws"><span class='kw'>검정 배경</span><span class='kw'>파스텔 타일(핑크·라벤더·연두·초록)</span><span class='kw'>큰 숫자 강조</span><span class='kw'>하이라이트 글자 상자</span><span class='kw'>에이전시 느낌</span></div><div class="sws"><span class="sw" style="background:#111111" title="#111111"></span><span class="sw" style="background:#F4D6EE" title="#F4D6EE"></span><span class="sw" style="background:#B7A6F7" title="#B7A6F7"></span><span class="sw" style="background:#F3F7A3" title="#F3F7A3"></span><span class="sw" style="background:#4E8F6C" title="#4E8F6C"></span></div></div>
+    </header>
+    <div class="refs">
+      <article class="ref">
+        <a class="thumb" href="https://21st.dev/@romanvasnev/components/analytics-bento" target="_blank" rel="noopener"><img src="https://21st.dev/og/component/romanvasnev/analytics-bento" alt="Analytics Bento 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">21st.dev</span>
+            <span class="badge free">무료(코드 복사 하루 제한)</span></div>
+          <h4><a href="https://21st.dev/@romanvasnev/components/analytics-bento" target="_blank" rel="noopener">Analytics Bento ↗</a></h4>
+          <p><b>고른 이유</b> 큰 숫자·그래프 타일 중심의 벤토</p>
+          <p><b>가져올 점</b> 사이트 수·분류 수를 큰 숫자 타일로</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="21st.dev · Analytics Bento (https://21st.dev/@romanvasnev/components/analytics-bento)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://21st.dev/@themeocean/components/interactive-tech-stack-bento-grid-with-hover-effects" target="_blank" rel="noopener"><img src="https://21st.dev/og/component/themeocean/interactive-tech-stack-bento-grid-with-hover-effects" alt="Interactive Tech Stack Bento Grid 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">21st.dev</span>
+            <span class="badge free">무료(코드 복사 하루 제한)</span></div>
+          <h4><a href="https://21st.dev/@themeocean/components/interactive-tech-stack-bento-grid-with-hover-effects" target="_blank" rel="noopener">Interactive Tech Stack Bento Grid ↗</a></h4>
+          <p><b>고른 이유</b> 마우스를 올리면 반응하는 벤토 타일</p>
+          <p><b>가져올 점</b> 타일 호버 효과</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="21st.dev · Interactive Tech Stack Bento Grid (https://21st.dev/@themeocean/components/interactive-tech-stack-bento-grid-with-hover-effects)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://www.footer.design/sites/10x-designers" target="_blank" rel="noopener"><img src="https://cdn.prod.website-files.com/64fe1f9c06690a6cee3471ec/6743d654991206e0aa4b06c0_6539792c47619323fcf7d096_10xdesigners-desktop.avif" alt="10x Designers 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">footer.design</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://www.footer.design/sites/10x-designers" target="_blank" rel="noopener">10x Designers ↗</a></h4>
+          <p><b>고른 이유</b> Bento Box · Dark · Cards · 3D 태그</p>
+          <p><b>가져올 점</b> 어두운 바탕 위 카드 타일</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="footer.design · 10x Designers (https://www.footer.design/sites/10x-designers)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://www.awwwards.com/websites/sites_of_the_year/" target="_blank" rel="noopener"><img src="shots/08.png" alt="올해의 사이트(SOTY) 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">Awwwards</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://www.awwwards.com/websites/sites_of_the_year/" target="_blank" rel="noopener">올해의 사이트(SOTY) ↗</a></h4>
+          <p><b>고른 이유</b> 다크 톤 수상작이 많아 완성도 기준으로 좋음</p>
+          <p><b>가져올 점</b> 여백·타이포 위계</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="Awwwards · 올해의 사이트(SOTY) (https://www.awwwards.com/websites/sites_of_the_year/)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb noimg" href="https://dribbble.com/shots/popular/web-design" target="_blank" rel="noopener"><span>Dribbble은 약관상 자동 복사를 금지해 미리보기를 만들지 않았어요. 링크로 직접 보세요.</span></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">Dribbble</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://dribbble.com/shots/popular/web-design" target="_blank" rel="noopener">검색어: bento grid (웹 디자인 분류) ↗</a></h4>
+          <p><b>고른 이유</b> 벤토 웹 시안이 가장 많이 모이는 곳</p>
+          <p><b>가져올 점</b> 색 조합·타일 비율</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="Dribbble · 검색어: bento grid (웹 디자인 분류) (https://dribbble.com/shots/popular/web-design)"> 이 레퍼런스 참고</label>
+        </div>
+      </article></div>
+  </section>
+  <section class="dir" id="dir-C">
+    <header class="dir-head">
+      <label class="dirpick"><input type="radio" name="direction" value="C"
+        data-label="C. 미니멀 모노 벤토">
+        <span class="dir-id">C</span><span class="dir-name">미니멀 모노 벤토</span></label>
+      <p class="dir-sum">흰 바탕에 얇은 테두리, 한 가지 강조색만 쓰는 차분한 정보형</p>
+      <div class="meta"><div class="kws"><span class='kw'>흰 바탕</span><span class='kw'>얇은 테두리</span><span class='kw'>강조색 1개</span><span class='kw'>정보 밀도 높음</span><span class='kw'>애플·리니어 느낌</span></div><div class="sws"><span class="sw" style="background:#FAFAF9" title="#FAFAF9"></span><span class="sw" style="background:#E7E5E4" title="#E7E5E4"></span><span class="sw" style="background:#1C1917" title="#1C1917"></span><span class="sw" style="background:#2563EB" title="#2563EB"></span><span class="sw" style="background:#78716C" title="#78716C"></span></div></div>
+    </header>
+    <div class="refs">
+      <article class="ref">
+        <a class="thumb" href="https://getdesign.md/linear.app/design-md" target="_blank" rel="noopener"><img src="https://getdesign.md/api/og/linear.app/design-md?v=2" alt="Linear DESIGN.md 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">getdesign.md</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://getdesign.md/linear.app/design-md" target="_blank" rel="noopener">Linear DESIGN.md ↗</a></h4>
+          <p><b>고른 이유</b> 색·서체·간격 규칙을 AI에 그대로 넘길 수 있음</p>
+          <p><b>가져올 점</b> 회색 단계와 얇은 선</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="getdesign.md · Linear DESIGN.md (https://getdesign.md/linear.app/design-md)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://21st.dev/@shadcnspace/components/bento-grid-03" target="_blank" rel="noopener"><img src="https://21st.dev/og/component/shadcnspace/bento-grid-03" alt="Bento Grid 03 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">21st.dev</span>
+            <span class="badge free">무료(코드 복사 하루 제한)</span></div>
+          <h4><a href="https://21st.dev/@shadcnspace/components/bento-grid-03" target="_blank" rel="noopener">Bento Grid 03 ↗</a></h4>
+          <p><b>고른 이유</b> shadcn 스타일의 깔끔한 벤토</p>
+          <p><b>가져올 점</b> 얇은 테두리 타일 배치</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="21st.dev · Bento Grid 03 (https://21st.dev/@shadcnspace/components/bento-grid-03)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://www.footer.design/sites/polar" target="_blank" rel="noopener"><img src="https://cdn.prod.website-files.com/64fe1f9c06690a6cee3471ec/68d6aa415f6d4d6077acfb15_polar-desktop.avif" alt="Polar 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">footer.design</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://www.footer.design/sites/polar" target="_blank" rel="noopener">Polar ↗</a></h4>
+          <p><b>고른 이유</b> Bento Box · Cards · Grid · Minimal 태그를 모두 가짐</p>
+          <p><b>가져올 점</b> 밝은 카드형 벤토 정리</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="footer.design · Polar (https://www.footer.design/sites/polar)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb" href="https://www.siteinspire.com/websites/category/grid-layout" target="_blank" rel="noopener"><img src="shots/13.png" alt="Grid Layout 분류 미리보기" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('noimg');this.remove()"></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">SiteInspire</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://www.siteinspire.com/websites/category/grid-layout" target="_blank" rel="noopener">Grid Layout 분류 ↗</a></h4>
+          <p><b>고른 이유</b> 그리드 배치가 뛰어난 실제 사이트 모음</p>
+          <p><b>가져올 점</b> 정렬선과 여백 리듬</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="SiteInspire · Grid Layout 분류 (https://www.siteinspire.com/websites/category/grid-layout)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb noimg" href="https://mobbin.com/discover/sites/popular" target="_blank" rel="noopener"><span>Mobbin은 AI 에이전트의 열람을 막아 미리보기를 만들지 않았어요. 로그인 후 직접 보세요.</span></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">Mobbin</span>
+            <span class="badge login">로그인 필요</span></div>
+          <h4><a href="https://mobbin.com/discover/sites/popular" target="_blank" rel="noopener">검색어: bento ↗</a></h4>
+          <p><b>고른 이유</b> 실제 서비스의 벤토 섹션 화면</p>
+          <p><b>가져올 점</b> 타일 안 정보 구성</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="Mobbin · 검색어: bento (https://mobbin.com/discover/sites/popular)"> 이 레퍼런스 참고</label>
+        </div>
+      </article>
+      <article class="ref">
+        <a class="thumb noimg" href="https://styles.refero.design/" target="_blank" rel="noopener"><span>Refero는 AI 수집기를 막아 미리보기를 만들지 않았어요. 링크로 직접 보세요.</span></a>
+        <div class="ref-body">
+          <div class="ref-top"><span class="site">styles.refero.design</span>
+            <span class="badge free">무료</span></div>
+          <h4><a href="https://styles.refero.design/" target="_blank" rel="noopener">검색어: bento / minimal grid ↗</a></h4>
+          <p><b>고른 이유</b> 실제 브랜드의 색·서체 체계</p>
+          <p><b>가져올 점</b> 강조색 하나 고르기</p>
+          <label class="pick"><input type="checkbox" class="refpick" data-label="styles.refero.design · 검색어: bento / minimal grid (https://styles.refero.design/)"> 이 레퍼런스 참고</label>
+        </div>
+      </article></div>
+  </section>
+<pre id="out"></pre>
+</div>
+<div class="bar"><div class="in">
+<textarea id="memo" placeholder="덧붙일 말 (예: A의 색에 B의 레이아웃, 글씨는 더 크게)"></textarea>
+<span class="status" id="status">아직 고르지 않음</span>
+<button id="copy">선택 내용 복사</button></div></div>
+<script>
+(function(){
+  var KEY='drf-board:'+location.pathname;
+  var TITLE=document.querySelector('h1').textContent;
+  function save(){try{var st={dir:(document.querySelector('input[name=direction]:checked')||{}).value||'',refs:[].map.call(document.querySelectorAll('.refpick:checked'),function(x){return x.dataset.label}),memo:document.getElementById('memo').value};localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+  function load(){try{var st=JSON.parse(localStorage.getItem(KEY)||'null');if(!st)return;if(st.dir){[].forEach.call(document.querySelectorAll('input[name=direction]'),function(r){r.checked=(r.value===st.dir)})}
+    [].forEach.call(document.querySelectorAll('.refpick'),function(x){x.checked=st.refs.indexOf(x.dataset.label)>-1});document.getElementById('memo').value=st.memo||''}catch(e){}}
+  function text(){var d=document.querySelector('input[name=direction]:checked');var refs=[].map.call(document.querySelectorAll('.refpick:checked'),function(x){return '- '+x.dataset.label});
+    var t='[design-ref-finder 선택]\n보드: '+TITLE+'\n방식: '+(d?d.dataset.label:'(안 고름)')+'\n참고 레퍼런스:\n'+(refs.length?refs.join('\n'):'- (없음)');
+    var m=document.getElementById('memo').value.trim();if(m)t+='\n메모: '+m;return t}
+  function refresh(){var d=document.querySelector('input[name=direction]:checked');[].forEach.call(document.querySelectorAll('.dir'),function(s){s.classList.toggle('chosen',!!d&&s.id==='dir-'+d.value)});
+    var n=document.querySelectorAll('.refpick:checked').length;document.getElementById('status').textContent=(d?'방식 '+d.value:'방식 미선택')+' · 레퍼런스 '+n+'개';save()}
+  document.addEventListener('change',refresh);document.getElementById('memo').addEventListener('input',save);
+  document.getElementById('copy').addEventListener('click',function(){var t=text(),o=document.getElementById('out');o.textContent=t;o.style.display='block';
+    var done=function(){document.getElementById('status').textContent='복사됨 → 채팅창에 붙여 넣기'};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){o.scrollIntoView()})}else{o.scrollIntoView()}});
+  load();refresh();
+})();
+</script></body></html>

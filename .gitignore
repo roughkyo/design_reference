@@ -1,0 +1,6 @@
+# 디자인 추천 보드의 캡처 이미지는 보는 용도로만 쓰고 저장소에 올리지 않음
+design-refs/**/shots/
+.vercel
+node_modules/
+.DS_Store
+Thumbs.db

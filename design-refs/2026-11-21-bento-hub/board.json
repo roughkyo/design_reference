@@ -1,0 +1,49 @@
+{
+ "title": "디자인 레퍼런스 허브 (벤토그리드)",
+ "situation": "design-ref-finder가 안내하는 디자인 사이트 10곳을 한 페이지에 모아 보여 주는 웹페이지 · 벤토그리드 · GitHub + Vercel 배포 · 첨부 이미지 2장 참고",
+ "created": "2026-11-21",
+ "directions": [
+  {
+   "id": "A",
+   "name": "비비드 투톤 벤토",
+   "summary": "첨부 1번처럼 주황·하늘색 두 색을 크게 번갈아 쓰고, 흰 카드와 굵은 글씨로 경쾌하게",
+   "keywords": ["주황 + 하늘색", "큰 라운드(24~32px)", "굵은 산세리프", "흰 카드 속 미리보기", "밝고 친근"],
+   "palette": ["#FF6A1A", "#8EB4F6", "#FFFFFF", "#111111", "#FFE3D1"],
+   "refs": [
+    {"site": "21st.dev", "title": "Agency Bento Grid", "url": "https://21st.dev/@abushaidislam7/components/agency-bento-grid", "why": "큰 타일 하나와 작은 타일을 섞은 에이전시형 벤토", "borrow": "대표 사이트 1곳을 큰 타일로 강조", "access": "무료(코드 복사 하루 제한)"},
+    {"site": "21st.dev", "title": "Marketing Feature Bento", "url": "https://21st.dev/@isaiahbjork/components/marketing-feature-bento", "why": "기능 소개용 벤토라 사이트 소개 타일에 바로 맞음", "borrow": "타일마다 제목 + 한 줄 설명 + 그림", "access": "무료(코드 복사 하루 제한)"},
+    {"site": "footer.design", "title": "Diego", "url": "https://www.footer.design/sites/diego-liv-works", "why": "Bento Box · Bold · Bright · Colorful 태그를 모두 가진 푸터", "borrow": "원색 타일로 마무리하는 푸터", "access": "무료"},
+    {"site": "Spline 커뮤니티", "title": "Brand and Marketing 컬렉션", "url": "https://app.spline.design/community/collection/brand-marketing", "why": "타일 하나에 넣을 3D 오브젝트 후보", "borrow": "대표 타일 1개만 3D로 포인트", "access": "로그인 필요"}
+   ]
+  },
+  {
+   "id": "B",
+   "name": "다크 파스텔 벤토",
+   "summary": "첨부 2번처럼 검정 배경에 파스텔 타일, 큰 숫자와 형광 하이라이트로 세련되게",
+   "keywords": ["검정 배경", "파스텔 타일(핑크·라벤더·연두·초록)", "큰 숫자 강조", "하이라이트 글자 상자", "에이전시 느낌"],
+   "palette": ["#111111", "#F4D6EE", "#B7A6F7", "#F3F7A3", "#4E8F6C"],
+   "refs": [
+    {"site": "21st.dev", "title": "Analytics Bento", "url": "https://21st.dev/@romanvasnev/components/analytics-bento", "why": "큰 숫자·그래프 타일 중심의 벤토", "borrow": "사이트 수·분류 수를 큰 숫자 타일로", "access": "무료(코드 복사 하루 제한)"},
+    {"site": "21st.dev", "title": "Interactive Tech Stack Bento Grid", "url": "https://21st.dev/@themeocean/components/interactive-tech-stack-bento-grid-with-hover-effects", "why": "마우스를 올리면 반응하는 벤토 타일", "borrow": "타일 호버 효과", "access": "무료(코드 복사 하루 제한)"},
+    {"site": "footer.design", "title": "10x Designers", "url": "https://www.footer.design/sites/10x-designers", "why": "Bento Box · Dark · Cards · 3D 태그", "borrow": "어두운 바탕 위 카드 타일", "access": "무료"},
+    {"site": "Awwwards", "title": "올해의 사이트(SOTY)", "url": "https://www.awwwards.com/websites/sites_of_the_year/", "why": "다크 톤 수상작이 많아 완성도 기준으로 좋음", "borrow": "여백·타이포 위계", "access": "무료"},
+    {"site": "Dribbble", "title": "검색어: bento grid (웹 디자인 분류)", "url": "https://dribbble.com/shots/popular/web-design", "why": "벤토 웹 시안이 가장 많이 모이는 곳", "borrow": "색 조합·타일 비율", "access": "무료"}
+   ]
+  },
+  {
+   "id": "C",
+   "name": "미니멀 모노 벤토",
+   "summary": "흰 바탕에 얇은 테두리, 한 가지 강조색만 쓰는 차분한 정보형",
+   "keywords": ["흰 바탕", "얇은 테두리", "강조색 1개", "정보 밀도 높음", "애플·리니어 느낌"],
+   "palette": ["#FAFAF9", "#E7E5E4", "#1C1917", "#2563EB", "#78716C"],
+   "refs": [
+    {"site": "getdesign.md", "title": "Linear DESIGN.md", "url": "https://getdesign.md/linear.app/design-md", "why": "색·서체·간격 규칙을 AI에 그대로 넘길 수 있음", "borrow": "회색 단계와 얇은 선", "access": "무료"},
+    {"site": "21st.dev", "title": "Bento Grid 03", "url": "https://21st.dev/@shadcnspace/components/bento-grid-03", "why": "shadcn 스타일의 깔끔한 벤토", "borrow": "얇은 테두리 타일 배치", "access": "무료(코드 복사 하루 제한)"},
+    {"site": "footer.design", "title": "Polar", "url": "https://www.footer.design/sites/polar", "why": "Bento Box · Cards · Grid · Minimal 태그를 모두 가짐", "borrow": "밝은 카드형 벤토 정리", "access": "무료"},
+    {"site": "SiteInspire", "title": "Grid Layout 분류", "url": "https://www.siteinspire.com/websites/category/grid-layout", "why": "그리드 배치가 뛰어난 실제 사이트 모음", "borrow": "정렬선과 여백 리듬", "access": "무료"},
+    {"site": "Mobbin", "title": "검색어: bento", "url": "https://mobbin.com/discover/sites/popular", "why": "실제 서비스의 벤토 섹션 화면", "borrow": "타일 안 정보 구성", "access": "로그인 필요"},
+    {"site": "styles.refero.design", "title": "검색어: bento / minimal grid", "url": "https://styles.refero.design/", "why": "실제 브랜드의 색·서체 체계", "borrow": "강조색 하나 고르기", "access": "무료"}
+   ]
+  }
+ ]
+}
