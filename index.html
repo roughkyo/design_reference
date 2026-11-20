@@ -118,9 +118,9 @@ a{color:inherit}
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .steps li{background:var(--white);border-radius:18px;padding:12px 14px;box-shadow:0 10px 30px rgba(0,0,0,.08);font-size:14px}
 .steps b{display:block;font-family:Unbounded,sans-serif;color:var(--orange);font-size:13px;margin-bottom:2px}
-.foot{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:var(--gap)}
-.foot .big{font-size:clamp(28px,4vw,52px);color:var(--white)}
-.foot a{color:var(--white);font-weight:700}
+.foot{padding:16px 24px;min-height:0!important;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:var(--gap)}
+.foot .big{font-size:clamp(17px,1.5vw,22px);color:var(--white)}.foot .by{color:#FF8A4C;margin-left:6px}.foot{font-size:14px;color:rgba(255,255,255,.75)}
+.foot a{color:#FF8A4C;font-weight:700}
 
 /* ---------- 반응형 ---------- */
 @media (max-width:1060px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.w4{grid-column:span 2}.scene{width:300px;height:300px}}
@@ -280,8 +280,8 @@ a{color:inherit}
     </section>
 
   </div>
-  <footer class="tile orange foot">
-    <div class="big display">Find it. Pick it. Build it.</div>
+  <footer class="tile foot neu">
+    <div class="big display">디자인 레퍼런스<span class="by">-by Yangphago</span></div>
     <div>2026 · design-ref-finder · <a href="https://github.com/roughkyo/design_reference" target="_blank" rel="noopener">GitHub</a></div>
   </footer>
 </main>
